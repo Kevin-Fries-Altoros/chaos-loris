@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: cfje/chaos-loris
+
+inputs:
+- name: chaos-loris
+
+run:
+  path: chaos-loris/ci/deploy.sh
+
+params:
+  ARTIFACTORY_USERNAME:
+  ARTIFACTORY_PASSWORD:
+  SPRING_DATASOURCE_PASSWORD: ''
+  SPRING_DATASOURCE_USERNAME: root
