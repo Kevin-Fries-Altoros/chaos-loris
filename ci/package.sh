@@ -7,6 +7,9 @@ sleep 2
 mysqladmin create chaos-loris
 
 cd chaos-loris
-./mvnw -q deploy
+./mvnw clean package
+
+cp manifest.yml ../chaos-loris-deploy
+cp -r target ../chaos-loris-deploy
 
 mysqladmin shutdown

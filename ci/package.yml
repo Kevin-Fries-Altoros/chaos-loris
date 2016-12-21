@@ -9,11 +9,9 @@ image_resource:
 inputs:
 - name: chaos-loris
 
-run:
-  path: chaos-loris/ci/deploy.sh
+outputs:
+- name: chaos-loris-deploy
 
-params:
-  ARTIFACTORY_USERNAME:
-  ARTIFACTORY_PASSWORD:
-  SPRING_DATASOURCE_PASSWORD: ''
-  SPRING_DATASOURCE_USERNAME: root
+run:
+  path: chaos-loris/ci/package.sh
+
